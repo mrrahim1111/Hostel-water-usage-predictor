@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Hostel Water Usage Predictor</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                💧 Smart Water Predictor
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#features">Features</a></li>
+
+                <li><a href="#analyser">Analyser</a></li>
+
+                <li><a href="#flow">Flow</a></li>
+
+                <li><a href="#project information">Project Info</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Smart Hostel Water Usage Predictor
+            </h1>
+
+            <p>
+
+                A web-based engineering project that predicts hostel
+                water consumption, remaining tank hours, and provides a visual usage chart
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#analyser" class="btn primary">
+                    Start Prediction
+                </a>
+
+                <a href="#about" class="btn secondary">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="about">
+
+        <h2>Project Overview</h2>
+
+        <p>
+
+            This project predicts hostel water usage using the number
+            of residents, tank dimensions, and current water level.
+            It combines concepts from C Programming, Physics,
+            Engineering Mathematics, and Basic Electrical &
+            Electronics Engineering (BEEE).
+
+        </p>
+
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+
+    <section id="features" class="features">
+
+        <h2>Project Features</h2>
+
+        <div class="feature-grid">
+
+            <div class="card">
+                <i class="fas fa-tint"></i>
+                <h3>Water Prediction</h3>
+                <p>Estimate daily water consumption.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Analytics</h3>
+                <p>Visualize usage trends.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ANALYSER ================= -->
+
+    <section id="analyser" class="analyser">
+
+        <h2>Water Usage Calculator</h2>
+
+        <div class="analyser-container">
+
+            <div class="input-panel">
+
+                <label>Number of Residents</label>
+                <input type="number" id="people">
+
+                <label>Tank Radius (m)</label>
+                <input type="number" id="radius">
+
+                <label>Tank Height (m)</label>
+                <input type="number" id="height">
+
+                <label>Current Water Depth (m)</label>
+                <input type="number" id="depth">
+
+                <label>Peak Usage Hours</label>
+                <input type="number" id="hours">
+
+                <label>Temperature (°C)</label>
+                <input type="number" id="temperature" step="0.1">
+
+                <label>Weekend</label>
+                <select id="weekend">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <label>Exam Period</label>
+                <select id="exam">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <button id="predictBtn">
+
+                    Predict Water Usage
+
+                </button>
+
+            </div>
+
+            <div class="result-panel">
+
+                <div class="result-box">
+
+                    <h3>Total Capacity</h3>
+
+                    <span id="capacity">0 L</span>
+
+                </div>
+
+                <div class="result-box">
+
+                    <h3>Current Water</h3>
+
+                    <span id="current">0 L</span>
+
+                </div>
+
+                <div class="result-box">
+
+                    <h3>Daily Demand</h3>
+
+                    <span id="demand">0 L</span>
+
+                </div>
+
+                <div class="result-box">
+
+                    <h3>Adjusted Demand</h3>
+
+                    <span id="adjusted">0 L</span>
+
+                </div>
+
+                <div class="result-box">
+
+                    <h3>Hours Remaining</h3>
+
+                    <span id="remaining">0 hrs</span>
+
+                </div>
+
+            </div>
+
+            <div class="chart-panel">
+                <h3>Usage Chart</h3>
+                <canvas id="usageChart"></canvas>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FLOW ================= -->
+
+    <section id="flow">
+
+        <h2>System Workflow</h2>
+
+        <div class="flow">
+
+            <div class="step">📝 Input Data</div>
+
+            <div class="arrow">→</div>
+
+            <div class="step">📏 Volume Calculation</div>
+
+            <div class="arrow">→</div>
+
+            <div class="step">📊 Demand Estimation</div>
+
+            <div class="arrow">→</div>
+
+            <div class="step">💡 Result Display</div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= Project Information ================= -->
+
+    <section id="project information">
+
+        <h2>Project Information</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Purpose</h3>
+                <p>Estimate hostel water consumption and remaining tank hours using current tank level and usage factors.</p>
+            </div>
+            <div class="info-card">
+                <h3>Features</h3>
+                <p>Includes tank volume calculation, demand adjustment for temperature, weekend, and exam period, and a visual usage chart.</p>
+            </div>
+            <div class="info-card">
+                <h3>Usage</h3>
+                <p>Enter tank dimensions, current depth, and conditions, then click Predict to get capacity, demand, and remaining hours.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Smart Hostel Water Usage Predictor | Developed for Engineering Project
+
+        </p>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
